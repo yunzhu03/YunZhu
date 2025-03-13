@@ -1,95 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple webpage hosted on GitHub Pages">
-    <title>My GitHub Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- You can add a custom CSS file -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444;
-            padding: 1em;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            padding: 2em;
-            margin: 0 auto;
-            max-width: 1000px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: #333;
-            color: white;
-        }
-    </style>
+    <title>Photo Gallery</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header>
-        <h1>Welcome to My GitHub Pages Website</h1>
-        <p>Built with HTML and GitHub Pages</p>
-    </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <h1 style="text-align: center; margin-top: 20px;">Photo Gallery</h1>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi! I'm a web developer and I'm using GitHub Pages to host my website. Feel free to explore and learn more about my projects and interests.</p>
-    </section>
+    <div class="container" id="gallery-container">
+        <!-- Images will be dynamically added here -->
+    </div>
 
-    <section id="projects">
-        <h2>My Projects</h2>
-        <ul>
-            <li>Project 1: A portfolio website</li>
-            <li>Project 2: A weather app using JavaScript</li>
-            <li>Project 3: A to-do list app with React</li>
-        </ul>
-    </section>
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>If you have any questions or would like to collaborate, feel free to reach out!</p>
-        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-    </section>
-
-    <footer>
-        <p>© 2025 Your Name</p>
-    </footer>
 </body>
-
 </html>
