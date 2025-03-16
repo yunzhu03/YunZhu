@@ -46,8 +46,13 @@ function generateDiary() {
 generateDiary();
 
 function loadHeader() {
-    fetch('https://yunzhu03.github.io/YunZhu/components/header.html', { cache: "no-store" }) 
-        .then(response => response.text())
+    fetch('https://raw.githubusercontent.com/yunzhu03/YunZhu/main/components/header.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
         })
@@ -55,8 +60,13 @@ function loadHeader() {
 }
 
 function loadFooter() {
-    fetch('https://yunzhu03.github.io/YunZhu/components/footer.html', { cache: "no-store" }) 
-        .then(response => response.text())
+    fetch('https://raw.githubusercontent.com/yunzhu03/YunZhu/main/components/footer.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
         })
