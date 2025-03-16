@@ -47,7 +47,7 @@ generateDiary();
 
 // Function to load the header dynamically
 function loadHeader() {
-    fetch('https://yunzhu03.github.io/YunZhu/components/header.html')
+    fetch('/components/header.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -62,21 +62,13 @@ function loadHeader() {
         });
 }
 
-// Function to load the footer dynamically
 function loadFooter() {
-    fetch('https://yunzhu03.github.io/YunZhu/components/footer.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
+    fetch('/components/footer.html')  // Corrected path
+        .then(response => response.text())
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
         })
-        .catch(error => {
-            console.error('Error loading footer:', error);
-        });
+        .catch(error => console.error('Error loading footer:', error));
 }
 
 // Call the functions to load the header and footer when the page loads
