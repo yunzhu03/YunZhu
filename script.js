@@ -1,33 +1,86 @@
-// Array of images and descriptions
-const images = [
-    { src: "https://via.placeholder.com/600x400", alt: "Image 1", description: "Description for Image 1" },
-    { src: "https://via.placeholder.com/600x400", alt: "Image 2", description: "Description for Image 2" },
-    { src: "https://via.placeholder.com/600x400", alt: "Image 3", description: "Description for Image 3" },
-    { src: "https://via.placeholder.com/600x400", alt: "Image 4", description: "Description for Image 4" },
-    { src: "https://via.placeholder.com/600x400", alt: "Image 5", description: "Description for Image 5" },
-    { src: "https://via.placeholder.com/600x400", alt: "Image 6", description: "Description for Image 6" }
+// Array of images, descriptions, and dates
+const diaryEntries = [
+    { src: "./images/default.png", alt: "Dog playing in the park", description: "Had a fun day at the park! 🏀", date: "March 15, 2025" },
+    { src: "./images/default.png", alt: "Dog sleeping", description: "My doggo fell asleep in the cutest way ever! 💤", date: "March 10, 2025" },
+    { src: "./images/default.png", alt: "Dog eating treats", description: "Tried new treats today, and he loved them! 🍖", date: "March 5, 2025" },
+    { src: "./images/default.png", alt: "Dog with a toy", description: "Got a new squeaky toy—best day ever! 🧸", date: "March 1, 2025" }
 ];
 
-// Function to generate the gallery items dynamically
-function generateGallery() {
+// Function to generate the diary entries dynamically
+function generateDiary() {
     const galleryContainer = document.getElementById("gallery-container");
 
-    images.forEach(image => {
-        const galleryItem = document.createElement("div");
-        galleryItem.classList.add("gallery-item");
+    diaryEntries.forEach(entry => {
+        // Create entry container
+        const entryContainer = document.createElement("div");
+        entryContainer.classList.add("diary-entry");
 
+        // Create image element
         const img = document.createElement("img");
-        img.src = image.src;
-        img.alt = image.alt;
+        img.src = entry.src;
+        img.alt = entry.alt;
 
-        const figcaption = document.createElement("figcaption");
-        figcaption.textContent = image.description;
+        // Create text container
+        const textContainer = document.createElement("div");
+        textContainer.classList.add("entry-text");
 
-        galleryItem.appendChild(img);
-        galleryItem.appendChild(figcaption);
-        galleryContainer.appendChild(galleryItem);
+        // Create date and description
+        const date = document.createElement("p");
+        date.classList.add("entry-date");
+        date.innerHTML = `<strong>Date:</strong> ${entry.date}`;
+
+        const description = document.createElement("p");
+        description.classList.add("entry-description");
+        description.textContent = entry.description;
+
+        // Append elements
+        textContainer.appendChild(date);
+        textContainer.appendChild(description);
+        entryContainer.appendChild(img);
+        entryContainer.appendChild(textContainer);
+        galleryContainer.appendChild(entryContainer);
     });
 }
 
-// Call the function to generate the gallery on page load
-generateGallery();
+// Call the function to generate the diary on page load
+generateDiary();
+
+// Function to load the header dynamically
+function loadHeader() {
+    fetch('https://yunzhu03.github.io/YunZhu/components/header.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading header:', error);
+        });
+}
+
+// Function to load the footer dynamically
+function loadFooter() {
+    fetch('https://yunzhu03.github.io/YunZhu/components/footer.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading footer:', error);
+        });
+}
+
+// Call the functions to load the header and footer when the page loads
+window.onload = function() {
+    loadHeader();
+    loadFooter();
+};
