@@ -110,7 +110,7 @@ main {
 
 /* About Me Section */
 .about {
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 20px;
     background-color: #ffe5b4;
     border-radius: 10px;
@@ -172,18 +172,24 @@ footer a:hover {
 }
 
 .dog-info {
-    width: 70%; /* Dog info section takes up 70% of the container */
+    width: 60%; /* Dog info section takes up 70% of the container */
     display: flex;
     flex-direction: column; /* Stack the different sections vertically */
 }
 
 .dog-info h2 {
-    margin-bottom: 10px; /* Space between heading and paragraph */
+    margin-bottom: 0px; /* Space between heading and paragraph */
 }
 
 .dog-info p {
     font-size: 1.1em;
     line-height: 1.6em;
-    color: #555;
+    color: #2e2e2e;
     margin-bottom: 10px; /* Space between paragraphs */
+}
+
+#me {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }

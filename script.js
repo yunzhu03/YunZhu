@@ -1,9 +1,8 @@
 // Array of images, descriptions, and dates
 const diaryEntries = [
-    { src: "./images/default.png", alt: "Dog playing in the park", description: "Had a fun day at the park! 🏀", date: "March 15, 2025" },
-    { src: "./images/default.png", alt: "Dog sleeping", description: "My doggo fell asleep in the cutest way ever! 💤", date: "March 10, 2025" },
-    { src: "./images/default.png", alt: "Dog eating treats", description: "Tried new treats today, and he loved them! 🍖", date: "March 5, 2025" },
-    { src: "./images/default.png", alt: "Dog with a toy", description: "Got a new squeaky toy—best day ever! 🧸", date: "March 1, 2025" }
+    { src: "./images/2.jpg", alt: "Andy em Barcelos", description: "Andy em Barcelos. Não queria voltar para casa.", date: "March 16, 2025" },
+    { src: "./images/1.jpg", alt: "No veterinário", description: "Baby no vet. Que medo!", date: "March 15, 2025" }
+    
 ];
 
 // Function to generate the diary entries dynamically
