@@ -45,25 +45,17 @@ function generateDiary() {
 // Call the function to generate the diary on page load
 generateDiary();
 
-// Function to load the header dynamically
 function loadHeader() {
-    fetch('/components/header.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
+    fetch('https://yunzhu03.github.io/YunZhu/components/header.html', { cache: "no-store" }) 
+        .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
         })
-        .catch(error => {
-            console.error('Error loading header:', error);
-        });
+        .catch(error => console.error('Error loading header:', error));
 }
 
 function loadFooter() {
-    fetch('/components/footer.html')  // Corrected path
+    fetch('https://yunzhu03.github.io/YunZhu/components/footer.html', { cache: "no-store" }) 
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
@@ -71,7 +63,6 @@ function loadFooter() {
         .catch(error => console.error('Error loading footer:', error));
 }
 
-// Call the functions to load the header and footer when the page loads
 window.onload = function() {
     loadHeader();
     loadFooter();
