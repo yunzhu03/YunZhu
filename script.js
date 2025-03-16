@@ -46,7 +46,7 @@ function generateDiary() {
 generateDiary();
 
 function loadHeader() {
-    fetch('https://raw.githubusercontent.com/yunzhu03/YunZhu/main/components/header.html')
+    fetch('/YunZhu/components/header.html')  // Absolute path
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -60,7 +60,7 @@ function loadHeader() {
 }
 
 function loadFooter() {
-    fetch('https://raw.githubusercontent.com/yunzhu03/YunZhu/main/components/footer.html')
+    fetch('/YunZhu/components/footer.html')  // Absolute path
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
