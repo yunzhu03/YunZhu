@@ -45,35 +45,15 @@ function generateDiary() {
 // Call the function to generate the diary on page load
 generateDiary();
 
-function loadHeader() {
-    fetch('/YunZhu/components/header.html')  // Absolute path
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById('header-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading header:', error));
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const birthDate = new Date("2021-05-24");
+    const currentDate = new Date();
+    const age = currentDate.getFullYear() - birthDate.getFullYear();
+    const month = currentDate.getMonth() - birthDate.getMonth();
+    const dogAge = month < 0 || (month === 0 && currentDate.getDate() < birthDate.getDate()) ? age - 1 : age;
 
-function loadFooter() {
-    fetch('/YunZhu/components/footer.html')  // Absolute path
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById('footer-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading footer:', error));
-}
-
-window.onload = function() {
-    loadHeader();
-    loadFooter();
-};
+    const dogAgeElement = document.getElementById("dog-age");
+    if (dogAgeElement) {
+        dogAgeElement.textContent = dogAge;
+    }
+});
